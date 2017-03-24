@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Ottman Express', condition: true, anyArray: [1,2,3] });
+  res.render('index');
 });
 
 router.get('/test/:id', function(req, res, next) {

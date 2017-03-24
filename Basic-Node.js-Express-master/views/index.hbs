@@ -1,15 +1,50 @@
-<h1>{{ title }}</h1>
-<p>Welcome to {{ title }}</p>
-<form action="/test/submit" method="post">
-    <input type="text" name="id">
-    <button type="submit">Submit</button>
-</form>
-{{# if condition }}
-   condition is met
-{{ else }}
-   condition not met
-{{/if}}
+<style>
+    .btn_img{
+        width: 300px;
+        height: 200px;
+    }
+    .btn_img:hover{
+        border: double;
+        border-color: white;
 
-{{# each anyArray as |val key|}}
-    {{ key }}: {{ val }}
-{{/each}}
+</style>
+
+<h1 style="color:white">FootBall Legends</h1>
+<p>Home</p>
+<br><br>
+<table style="width:100%">
+    <tr>
+        <th style="text-align: center">
+            <button class="btn_img" style="background: url(../images/CHAMPIONS.jpg);background-size: cover"/>
+        </th>
+        <th style="text-align: center">
+            <button class="btn_img" style="background: url(../images/maxresdefault.jpg);background-size: cover"/>
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;color: white">
+            CHAMPIONS
+        </th>
+        <th style="text-align: center;color: white">
+            CLUBS
+        </th>
+    </tr>
+    <tr>
+        <td style="height: 50px"></td>
+    </tr>
+    <tr>
+        <th style="text-align: center;color: white">
+            <button class="btn_img" style="background: url(../images/Soccer-Field-Night.jpg);background-size: cover"/>
+        <th style="text-align: center;color: white">
+            <button class="btn_img" style="background: url(../images/soccer-ball.jpg);background-size: cover"/>
+    </th>
+    </tr>
+    <tr>
+        <th style="text-align: center;color: white">
+            FIELDS
+        </th>
+        <th style="text-align: center;color: white">
+            FOOTBALL
+        </th>
+    </tr>
+</table>

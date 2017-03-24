@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+        h1 {
+            color: white;
+        }
+        p {
+            color: white;
+        }
+        .backgr_home {
+            background:url(../images/cr7-Black.jpg) black no-repeat left top;
+            background-size: cover;
+        }
+        .btn-header{
+            background-color: black;
+            border: none;
+            color: goldenrod;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .btn-header:hover{
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+    </style>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link rek="stylesheet" href="/stylesheets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-    {{{ body }}}
+<body class="backgr_home">
+<div id="derekData"></div>
+<script type="text/javascript">
+    var currentRow = 0;
+    var currentCell = 0;
+
+    function ChangeCurrentCell() {
+        var tableRow = document.getElementsByTagName("tr")[currentRow];
+        var tableCell = tableRow.childNodes[currentCell];
+        tableCell.focus();
+        tableCell.style.color = "Green";
+    }
+    ChangeCurrentCell();
+
+    $(document).keydown(function(e){
+        if (e.keyCode == 37) {
+            currentCell--;
+            ChangeCurrentCell();
+            return false;
+        }
+        if (e.keyCode == 38) {
+            currentRow--;
+            ChangeCurrentCell();
+            return false;
+        }
+        if (e.keyCode == 39) {
+            currentCell++;
+            ChangeCurrentCell();
+            return false;
+        }
+        if (e.keyCode == 40) {
+            currentRow++;
+            ChangeCurrentCell();
+            return false;
+        }
+    });
+</script>
+<div class="row" style="background-color:black">
+    <div class="col-sm-4">
+        <a href="http://localhost:8000/" class="btn-header"><img src="../images/Football.png" width="30"/></a>
+    </div>
+    <div class="col-sm-1">
+        <a href="http://localhost:8000/test/1" class="btn-header">CHAMPIONS</a>
+    </div>
+    <div class="col-sm-1">
+        <a href="http://localhost:8000/test/2" class="btn-header">CLUBS</a>
+    </div>
+    <div class="col-sm-1">
+        <a href="http://localhost:8000/test/3" class="btn-header">FIELDS</a>
+    </div>
+    <div class="col-sm-1">
+        <a href="http://localhost:8000/test/4" class="btn-header">FOOTBALL</a>
+    </div>
+    <div class="col-sm-4">
+        <a href="http://localhost:8000/test/5" class="btn-header" style="float: right">CONNEXION</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">{{{ body }}}</div>
+    <div class="col-sm-3"></div>
+</div>
 </body>
 </html>
+
+
